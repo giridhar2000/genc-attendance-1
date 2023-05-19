@@ -55,7 +55,6 @@
 .body{
   width: 70vh;
   margin: 5vh auto;
-  /* margin-right: 2vh; */
 }
 
 /* @media screen and (min-width: 768px) {
@@ -74,17 +73,8 @@
       }
   } */
   
-  /* @media screen and (min-width: 992px) {
-      .userform {
-          width: 962px;
-      }
-      .navBar{
-        height: 10vh;
-      }
-      .navBar span{
-        font-size: xx-large;
-        font-weight: 500;
-        position: relative;
-        top: 2vh;
-      }
-  } */
+  @media screen and (min-width: 992px) {
+    .body{
+      width: 50vh;
+    }
+  }
