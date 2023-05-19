@@ -18,9 +18,6 @@ function Login() {
         <div className='body'>
         <Form form={form} name="horizontal_login" onFinish={onFinish}
         className="userform"
-        style={{
-          width: 450,
-        }}
         >
         <Form.Item
           name="username"

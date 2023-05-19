@@ -31,12 +31,13 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.navBar{
+.navBar {
   background-color: #000048;
   color: white;
   width: 100%;
@@ -45,16 +46,20 @@
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.navBar span{
+.navBar span {
   font-size: larger;
   font-weight: 500;
   position: relative;
   top: 3vh;
 }
 
-.body{
+.body {
   width: 70vh;
   margin: 5vh auto;
+}
+
+.userform {
+  width: 100%;
 }
 
 /* @media screen and (min-width: 768px) {
@@ -72,9 +77,11 @@
         top: 0vh;
       }
   } */
-  
-  @media screen and (min-width: 1290px) {
-    .body{
-      width: 50vh;
-    }
+
+@media screen and (min-width: 1290px) {
+
+  .navBar span {
+    font-size: x-large;
   }
+
+}
