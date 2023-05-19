@@ -14,7 +14,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -36,3 +35,56 @@
     transform: rotate(360deg);
   }
 }
+
+.navBar{
+  background-color: #000048;
+  color: white;
+  width: 100%;
+  text-align: center;
+  height: 10vh;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.navBar span{
+  font-size: larger;
+  font-weight: 500;
+  position: relative;
+  top: 3vh;
+}
+
+.body{
+  width: 70vh;
+  margin: 5vh auto;
+  /* margin-right: 2vh; */
+}
+
+/* @media screen and (min-width: 768px) {
+      .userform {
+          width: 738px;
+      }
+      .body{
+        width: 50vh;
+        margin: 8vh auto;
+      }
+      .navBar span{
+        font-size: large;
+        font-weight: 500;
+        position: relative;
+        top: 0vh;
+      }
+  } */
+  
+  /* @media screen and (min-width: 992px) {
+      .userform {
+          width: 962px;
+      }
+      .navBar{
+        height: 10vh;
+      }
+      .navBar span{
+        font-size: xx-large;
+        font-weight: 500;
+        position: relative;
+        top: 2vh;
+      }
+  } */
