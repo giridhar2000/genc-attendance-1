@@ -1,0 +1,23 @@
+.inputs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 6vh;
+}
+
+.attendance{
+    display: flex;
+    justify-content: space-around;
+    width: 93.5%;
+    align-items: center;
+}
+
+.ant-row.ant-form-item-row.css-dev-only-do-not-override-15rg2km{
+    gap: 2vh;
+    padding: 1vh;
+    margin: 0 !important;
+}
+
+.ant-form-item.css-dev-only-do-not-override-15rg2km{
+    margin: 2vh;
+
+}
