@@ -12,8 +12,8 @@ import "../DailyAttendance/DailyAttendance.css"
 function DailyAttendance() {
     const [value, setValue] = useState(1);
     const onChange = (e) => {
-      console.log('radio checked', e.target.value);
-      setValue(e.target.value);
+        console.log('radio checked', e.target.value);
+        setValue(e.target.value);
     };
     return (
         <Form
@@ -34,37 +34,36 @@ function DailyAttendance() {
             }}
         >
             <div className='inputs'>
-            <Form.Item label="Associate Id">
-                <Input />
-            </Form.Item>
+                <Form.Item label="Associate Id">
+                    <Input />
+                </Form.Item>
 
-            <Form.Item label="Associate Name">
-                <Input />
-            </Form.Item>
-            <Form.Item label="Project Id">
-                <Input />
-            </Form.Item>
-            <Form.Item label="Project Name">
-                <Input />
-            </Form.Item>
-            <Form.Item label="Project Location">
-                <Input />
-            </Form.Item>
-            <div className='attendance'>
-            <Radio.Group onChange={onChange} value={value}>
-                <Radio value={"Working From Office"}>Office</Radio>
-                <Radio value={"Working From Home"}>WFH</Radio>
-            </Radio.Group>
-            <Form.Item label="Date" >
-                <DatePicker />
-            </Form.Item>
-            </div>
+                <Form.Item label="Associate Name">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Project Id">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Project Name">
+                    <Input />
+                </Form.Item>
+                <Form.Item label="Project Location">
+                    <Input />
+                </Form.Item>
+                <div className='attendance'>
+                    <Radio.Group onChange={onChange} value={value}>
+                        <Radio value={"Working From Office"}>Office</Radio>
+                        <Radio value={"Working From Home"}>WFH</Radio>
+                    </Radio.Group>
+                    <Form.Item label="Date" >
+                        <DatePicker />
+                    </Form.Item>
+                </div>
             </div>
 
-            <Form.Item>
-                <Button>Button</Button>
-            </Form.Item>
-        </Form>
+                <Button style={{background: "#000048", color: "#fff", width:"15%"}}>Submit</Button>
+                <Button style={{width:"15%", marginLeft: "2vh"}}>Reset</Button>
+            </Form>
     )
 }
 

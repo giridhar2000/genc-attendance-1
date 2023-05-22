@@ -10,7 +10,7 @@ function Home() {
     const items = [
         {
           key: '1',
-          label: `Daily Calendar`,
+          label: `Daily Attendance`,
           children: <DailyAttendance />,
         },
         {
