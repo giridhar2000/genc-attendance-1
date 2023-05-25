@@ -85,3 +85,12 @@
   }
 
 }
+
+.authoriseduser{
+  display: flex;
+}
+
+.formbody{
+  margin-top: 3vh;
+  width: 100%;
+}

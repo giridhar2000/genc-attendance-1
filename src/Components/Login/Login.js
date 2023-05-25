@@ -2,17 +2,20 @@ import React from 'react'
 import { Button, Form, Input } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function Login() {
     const [form] = Form.useForm();
     const [, forceUpdate] = useState({});
-  
+    const navigate = useNavigate();
     useEffect(() => {
       forceUpdate({});
     }, []);
 
     const onFinish = (values) => {
         console.log('Success:', values);
+        sessionStorage.setItem("isLoggedin", "user")
+        window.location.reload()
+        navigate("/DailyAttendance")
       };
     return (
         <div className='body'>
@@ -34,7 +37,7 @@ function Login() {
         </Form.Item>
         <Form.Item shouldUpdate>
           {() => (
-            <Link to={"/home"}>
+            // <Link to={"/"}>
             <Button
               type="primary"
               htmlType="submit"
@@ -45,7 +48,7 @@ function Login() {
             >
               Submit
             </Button>
-            </Link>
+            // </Link>
           )}
         </Form.Item>
       </Form>
