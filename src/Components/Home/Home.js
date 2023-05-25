@@ -11,9 +11,9 @@ function Home() {
 
   const logout = () => {
     sessionStorage.clear()
-    window.location.reload()
+    navigate("/")
     setTimeout(()=>{
-      navigate("/")
+      window.location.reload()
     }, 500)
   }
 

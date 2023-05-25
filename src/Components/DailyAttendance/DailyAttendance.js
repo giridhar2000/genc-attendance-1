@@ -43,7 +43,7 @@ function DailyAttendance() {
                         <Radio value={"Working From Home"}>WFH</Radio>
                     </Radio.Group>
                     <Form.Item>
-                        <DatePicker />
+                        <DatePicker     />
                     </Form.Item>
                     <Select
                         defaultValue="Office Location"
