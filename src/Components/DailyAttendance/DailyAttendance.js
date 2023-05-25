@@ -3,17 +3,20 @@ import {
     Button,
     DatePicker,
     Form,
-    Input,
     Radio,
 } from 'antd';
 import { useState } from 'react';
 import "../DailyAttendance/DailyAttendance.css"
+import { Select } from 'antd';
 
 function DailyAttendance() {
     const [value, setValue] = useState(1);
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
+    };
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
     };
     return (
         <Form
@@ -27,43 +30,58 @@ function DailyAttendance() {
             initialValues={{
                 size: "default",
             }}
-            //onValuesChange={onFormLayoutChange}
             size={"default"}
             style={{
                 width: "100%",
+                marginTop: '3vh'
             }}
         >
             <div className='inputs'>
-                <Form.Item label="Associate Id">
-                    <Input />
-                </Form.Item>
-
-                <Form.Item label="Associate Name">
-                    <Input />
-                </Form.Item>
-                <Form.Item label="Project Id">
-                    <Input />
-                </Form.Item>
-                <Form.Item label="Project Name">
-                    <Input />
-                </Form.Item>
-                <Form.Item label="Project Location">
-                    <Input />
-                </Form.Item>
                 <div className='attendance'>
                     <Radio.Group onChange={onChange} value={value}>
                         <Radio value={"Working From Office"}>Office</Radio>
                         <Radio value={"Working From Home"}>WFH</Radio>
                     </Radio.Group>
-                    <Form.Item label="Date" >
+                    <Form.Item>
                         <DatePicker />
                     </Form.Item>
+                    <Select
+                        defaultValue="Office Location"
+                        style={{
+                            width: "15%",
+                        }}
+                        onChange={handleChange}
+                        options={[
+                            {
+                                value: 'CKC',
+                                label: 'CKC',
+                            },
+                            {
+                                value: 'TCO',
+                                label: 'TCO',
+                            },
+                            {
+                                value: 'MEPZ',
+                                label: 'MEPZ',
+                            },
+                            {
+                                value: 'DLF',
+                                label: 'DLF',
+                            },
+                            {
+                                value: 'CCC',
+                                label: 'CCC',
+                            },
+                        ]}
+                    />
                 </div>
+                <Button style={{ background: "#000048", color: "#fff", width: "15%" }}>Submit</Button>
+                <Button style={{ width: "15%", marginLeft: "2vh" }}>Reset</Button>
+
             </div>
 
-                <Button style={{background: "#000048", color: "#fff", width:"15%"}}>Submit</Button>
-                <Button style={{width:"15%", marginLeft: "2vh"}}>Reset</Button>
-            </Form>
+        </Form>
+        // </div>
     )
 }
 

@@ -1,23 +1,18 @@
-.inputs{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 6vh;
-}
-
 .attendance{
     display: flex;
-    justify-content: space-around;
-    width: 93.5%;
-    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 5vh;
 }
 
-.ant-row.ant-form-item-row.css-dev-only-do-not-override-15rg2km{
-    gap: 2vh;
-    padding: 1vh;
-    margin: 0 !important;
+.ant-select-arrow{
+    top: 30% !important;
 }
 
-.ant-form-item.css-dev-only-do-not-override-15rg2km{
-    margin: 2vh;
+.ant-select.css-dev-only-do-not-override-15rg2km.ant-select-single.ant-select-show-arrow{
+    width: 11% !important;
+}
 
+.ant-picker.ant-picker-default.css-dev-only-do-not-override-15rg2km{
+    width: 20vh
 }
