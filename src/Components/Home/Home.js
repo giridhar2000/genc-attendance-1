@@ -1,8 +1,6 @@
 import React from 'react'
 import { Button } from 'antd';
 import "../Home/Home.css"
-import DailyAttendance from '../DailyAttendance/DailyAttendance';
-import MonthlySheet from '../MonthlyRTOUpdates/MonthlySheet';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +12,7 @@ function Home() {
     navigate("/")
     setTimeout(()=>{
       window.location.reload()
-    }, 500)
+    }, 100)
   }
 
   return (

@@ -1,18 +1,8 @@
 .attendance{
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
     margin-top: 5vh;
 }
 
-.ant-select-arrow{
-    top: 30% !important;
-}
-
-.ant-select.css-dev-only-do-not-override-15rg2km.ant-select-single.ant-select-show-arrow{
-    width: 11% !important;
-}
-
-.ant-picker.ant-picker-default.css-dev-only-do-not-override-15rg2km{
-    width: 20vh
+.formitem{
+    width: 100% !important;
 }

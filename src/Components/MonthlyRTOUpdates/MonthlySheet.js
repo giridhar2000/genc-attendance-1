@@ -3,12 +3,12 @@ import DatePicker from "react-multi-date-picker";
 import {
     Button,
     Form,
-    Input,
 } from 'antd';
+import AttendanceForm from '../Form/AttendanceForm';
 
 function MonthlySheet() {
     const [value, setValue] = useState(new Date());
-
+    console.log(value)
     return (
         <Form
         labelCol={{
@@ -26,8 +26,16 @@ function MonthlySheet() {
             width: "100%",
         }}
     >
+        <AttendanceForm />
         <div className='inputs' style={{marginBottom: "2vh"}}>
-            <DatePicker multiple value={value} onChange={setValue} />
+        
+            <label>RTO updates:&nbsp;&nbsp;</label>
+            <DatePicker 
+            multiple 
+            placeholder='click to open' 
+            onChange={setValue} 
+            arrow={true} 
+            style={{width: "100vh"}}/>
         </div>
 
             <Button style={{background: "#000048", color: "#fff", width:"15%"}}>Submit</Button>

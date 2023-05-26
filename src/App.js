@@ -10,13 +10,18 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import DailyAttendance from './Components/DailyAttendance/DailyAttendance';
 import MonthlySheet from './Components/MonthlyRTOUpdates/MonthlySheet';
-import AttendanceForm from './Components/Form/AttendanceForm';
 
 function App() {
   return (
     <div className="App">
       <div className='navBar'>
+        <span style={{visibility: "hidden"}}>Genc Attendance</span>
         <span>Genc Attendance</span>
+        <div className='details'>
+          <span>welcome Giridhar</span><br />
+          <span>Id: 2136397</span>
+          
+        </div>
       </div>
       <Router>
         {sessionStorage.getItem("isLoggedin") ? (
@@ -24,7 +29,7 @@ function App() {
 
             <Home />
             <div className='formbody'>
-              <AttendanceForm />
+              {/* <AttendanceForm /> */}
               <Routes>
                 <Route exact path='/DailyAttendance' element={<DailyAttendance />}></Route>
                 <Route exact path='/RTOUpdates' element={<MonthlySheet />}></Route>

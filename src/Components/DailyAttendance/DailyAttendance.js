@@ -1,13 +1,13 @@
 import React from 'react'
 import {
     Button,
-    DatePicker,
     Form,
     Radio,
 } from 'antd';
 import { useState } from 'react';
 import "../DailyAttendance/DailyAttendance.css"
 import { Select } from 'antd';
+import AttendanceForm from '../Form/AttendanceForm';
 
 function DailyAttendance() {
     const [value, setValue] = useState(1);
@@ -37,18 +37,17 @@ function DailyAttendance() {
             }}
         >
             <div className='inputs'>
+                <AttendanceForm />
                 <div className='attendance'>
+                <Form.Item label="mode:" className='formitem'>
                     <Radio.Group onChange={onChange} value={value}>
                         <Radio value={"Working From Office"}>Office</Radio>
                         <Radio value={"Working From Home"}>WFH</Radio>
                     </Radio.Group>
-                    <Form.Item>
-                        <DatePicker     />
-                    </Form.Item>
                     <Select
                         defaultValue="Office Location"
                         style={{
-                            width: "15%",
+                            width: "25%",
                         }}
                         onChange={handleChange}
                         options={[
@@ -74,6 +73,7 @@ function DailyAttendance() {
                             },
                         ]}
                     />
+                    </Form.Item>
                 </div>
                 <Button style={{ background: "#000048", color: "#fff", width: "15%" }}>Submit</Button>
                 <Button style={{ width: "15%", marginLeft: "2vh" }}>Reset</Button>
