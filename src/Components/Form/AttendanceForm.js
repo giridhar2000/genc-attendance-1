@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Button,
     Form,
     Input,
 } from 'antd';
+import axios from "axios"
 
 function AttendanceForm() {
+    const [data, setData] = useState([])
+    useEffect(()=>{
+        
+        // axios
+        // .get("http://localhost:8080/attendance/",)
+        // .then(data => console.log(data.data))
+        // .catch(error => console.log(error));
+        setData(sessionStorage.getItem("userData"))
+        console.log(sessionStorage.getItem("userData"))
+        setTimeout(()=>{
+            console.log(data)
+        }, 100)
+    },[data])
     return (
         <Form
         labelCol={{
