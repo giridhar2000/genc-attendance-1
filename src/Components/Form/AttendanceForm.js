@@ -9,17 +9,14 @@ import axios from "axios"
 function AttendanceForm() {
     const [data, setData] = useState([])
     useEffect(()=>{
+        const id = sessionStorage.getItem("associateId")  
+        axios
+        .get("http://localhost:8080/attendance/"+id)
+        .then(data => setData(data.data))
+        .catch(error => console.log(error));
         
-        // axios
-        // .get("http://localhost:8080/attendance/",)
-        // .then(data => console.log(data.data))
-        // .catch(error => console.log(error));
-        setData(sessionStorage.getItem("userData"))
-        console.log(sessionStorage.getItem("userData"))
-        setTimeout(()=>{
-            console.log(data)
-        }, 100)
-    },[data])
+    },[])
+    console.log(data)
     return (
         <Form
         labelCol={{
@@ -39,21 +36,14 @@ function AttendanceForm() {
         }}
     >
         <div className='inputs'>
-            <Form.Item label="Associate Id">
-                <Input />
-            </Form.Item>
-
-            <Form.Item label="Associate Name">
-                <Input />
-            </Form.Item>
             <Form.Item label="Project Id">
-                <Input />
+                <Input value={data.project_Id} disabled/>
             </Form.Item>
             <Form.Item label="Project Name">
-                <Input />
+                <Input value={data.project_Desc} disabled/>
             </Form.Item>
             <Form.Item label="Project Location">
-                <Input />
+                <Input value={data.base_location} disabled/>
             </Form.Item>
         </div>
 

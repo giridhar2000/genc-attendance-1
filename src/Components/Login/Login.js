@@ -17,13 +17,17 @@ function Login() {
     axios
       .get("http://localhost:8080/attendance/" + values.username)
       .then(data => {
-        sessionStorage.setItem("userData", data.data)
+        sessionStorage.setItem("associateId", data.data.associate_Id)
+        sessionStorage.setItem("associateName", data.data.associate_Name)
         sessionStorage.setItem("isLoggedin", "user")
         window.location.reload()
         navigate("/DailyAttendance")
+
       }
       )
       .catch(error => console.log(error));
+
+
   };
   return (
     <div className='body'>
@@ -35,11 +39,12 @@ function Login() {
           rules={[
             {
               required: true,
-              message: 'Please input your username!',
+              message: 'Please input your Associate ID!',
             },
           ]}
         >
           <Input
+          type='number'
             prefix={<UserOutlined className="site-form-item-icon" />}
             placeholder="Associate Id" />
         </Form.Item>
