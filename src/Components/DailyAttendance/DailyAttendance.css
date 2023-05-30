@@ -1,8 +1,13 @@
 .attendance{
     display: flex;
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
 }
 
 .formitem{
     width: 100% !important;
+}
+
+.fields{
+    display: flex;
+    align-items: center;
 }

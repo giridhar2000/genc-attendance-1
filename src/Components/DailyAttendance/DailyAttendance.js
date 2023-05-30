@@ -39,10 +39,11 @@ function DailyAttendance() {
             <div className='inputs'>
                 <AttendanceForm />
                 <div className='attendance'>
-                <Form.Item label="mode:" className='formitem'>
+                <Form.Item label="RTO Mode:" className='formitem'>
+                    <div className='fields'>
                     <Radio.Group onChange={onChange} value={value}>
-                        <Radio value={"Working From Office"}>Office</Radio>
                         <Radio value={"Working From Home"}>WFH</Radio>
+                        <Radio value={"Working From Office"}>Office</Radio>
                     </Radio.Group>
                     <Select
                         defaultValue="Office Location"
@@ -73,6 +74,7 @@ function DailyAttendance() {
                             },
                         ]}
                     />
+                    </div>
                     </Form.Item>
                 </div>
                 <Button style={{ background: "#000048", color: "#fff", width: "15%" }}>Submit</Button>
@@ -81,7 +83,6 @@ function DailyAttendance() {
             </div>
 
         </Form>
-        // </div>
     )
 }
 

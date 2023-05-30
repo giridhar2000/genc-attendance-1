@@ -15,13 +15,23 @@ function App() {
   return (
     <div className="App">
       <div className='navBar'>
-        <span style={{visibility: "hidden"}}>Genc Attendance</span>
+        <span style={{ visibility: "hidden" }}>Genc Attendance</span>
         <span>Genc Attendance</span>
-        <div className='details'>
-          <span>welcome Giridhar</span><br />
-          <span>Id: 2136397</span>
-          
-        </div>
+        {sessionStorage.getItem("isLoggedin") ? (
+
+          <div className='details'>
+            <span>welcome {sessionStorage.getItem("associateName")}</span><br />
+            <span>Id: {sessionStorage.getItem("associateId")}</span>
+
+          </div>
+        )
+          :
+          (
+            <div>
+              <span style={{ visibility: "hidden" }}>Genc Attendance</span>
+
+            </div>
+          )}
       </div>
       <Router>
         {sessionStorage.getItem("isLoggedin") ? (
