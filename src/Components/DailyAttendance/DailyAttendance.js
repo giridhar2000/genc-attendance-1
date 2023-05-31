@@ -55,7 +55,7 @@ function DailyAttendance() {
             <div className='inputs'>
                 <AttendanceForm />
                 <div className='attendance'>
-                <Form.Item label="RTO Mode:" className='formitem'>
+                <Form.Item label="RTO Dates:" className='formitem'>
                     <div className='fields'>
                     <Radio.Group onChange={onChange}>
                         <Radio value={"Working From Home"}>WFH</Radio>
