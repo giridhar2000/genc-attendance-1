@@ -4,13 +4,15 @@ import {
     Form,
     Radio,
 } from 'antd';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../DailyAttendance/DailyAttendance.css"
 import { Select } from 'antd';
 import AttendanceForm from '../Form/AttendanceForm';
+import axios from 'axios';
 
 function DailyAttendance() {
-    const [value, setValue] = useState(1);
+    const id = sessionStorage.getItem("associateId")  
+    const [data, setData] = useState([]);
     const onChange = (e) => {
         console.log('radio checked', e.target.value);
         setValue(e.target.value);
@@ -18,6 +20,20 @@ function DailyAttendance() {
     const handleChange = (value) => {
         console.log(`selected ${value}`);
     };
+    useEffect(()=>{
+        axios
+        .get("http://localhost:8080/attendance/"+id)
+        .then(data => setData(data.data))
+        .catch(error => console.log(error));
+    },[])
+
+    const submit = () => {
+        axios
+        .put(("http://localhost:8080/attendance/SAVE/"+id), data)
+        .then(data => console.log("saved"))
+        .catch(error => console.log(error));
+        console.log(data)
+    }
     return (
         <Form
             labelCol={{
@@ -39,8 +55,10 @@ function DailyAttendance() {
             <div className='inputs'>
                 <AttendanceForm />
                 <div className='attendance'>
-                <Form.Item label="mode:" className='formitem'>
-                    <Radio.Group onChange={onChange} value={value}>
+                <Form.Item label="RTO Mode:" className='formitem'>
+                    <div className='fields'>
+                    <Radio.Group onChange={onChange}>
+                        <Radio value={"Working From Home"}>WFH</Radio>
                         <Radio value={"Working From Office"}>Office</Radio>
                         <Radio value={"Working From Home"}>WFH</Radio>
                     </Radio.Group>
@@ -73,6 +91,7 @@ function DailyAttendance() {
                             },
                         ]}
                     />
+                    </div>
                     </Form.Item>
                 </div>
                 <Button style={{ background: "#000048", color: "#fff", width: "15%" }}>Submit</Button>
