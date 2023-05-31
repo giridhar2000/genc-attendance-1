@@ -23,11 +23,13 @@ function Home() {
       <div className='navItems'>
         <NavLink activeclassname="active" to={"/RTOUpdates"}>Monthly RTO updates</NavLink>
       </div>
+      <div style={{display: "none"}}>
       <div className='navItems'>
         <NavLink activeclassname="active" to={"/admin"}>Admin</NavLink>
       </div>
       <div className='navItems'>
         <NavLink activeclassname="active" to={"/Report"}>Report</NavLink>
+      </div>
       </div>
       <div className='footer'>
         <Button onClick={logout}>

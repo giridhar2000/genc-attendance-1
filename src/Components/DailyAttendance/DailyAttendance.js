@@ -60,7 +60,6 @@ function DailyAttendance() {
                     <Radio.Group onChange={onChange}>
                         <Radio value={"Working From Home"}>WFH</Radio>
                         <Radio value={"Working From Office"}>Office</Radio>
-                        <Radio value={"Working From Home"}>WFH</Radio>
                     </Radio.Group>
                     <Select
                         defaultValue="Office Location"
@@ -100,7 +99,6 @@ function DailyAttendance() {
             </div>
 
         </Form>
-        // </div>
     )
 }
 

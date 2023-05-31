@@ -5,6 +5,7 @@ import {
     Form,
 } from 'antd';
 import AttendanceForm from '../Form/AttendanceForm';
+import "../MonthlyRTOUpdates/MonthlySheet.css"
 
 function MonthlySheet() {
     const [value, setValue] = useState(new Date());
@@ -27,7 +28,7 @@ function MonthlySheet() {
         }}
     >
         <AttendanceForm />
-        <div className='inputs' style={{marginBottom: "2vh"}}>
+        <div className='inputs rto' style={{marginBottom: "2vh"}}>
         
             <label>RTO updates:&nbsp;&nbsp;</label>
             <DatePicker 
